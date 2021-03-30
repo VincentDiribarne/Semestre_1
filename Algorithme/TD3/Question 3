@@ -1,0 +1,25 @@
+Q3)
+    Procedure trifusion(tableau tab, entier g, entier d)
+
+        Variables
+        Entier : g, d, m;
+        Debut
+
+                m <-- (g + d) / 2;
+
+
+    Correction
+
+    Procedure trifusion(tableau tab, entier g, entier d)
+
+    Variables
+    Entier : gauche, droite, milieu;
+    Debut
+        Si (gauche < droite) Alors
+            milieu <-- (gauche + droite) / 2;
+            trifusion(tab, gauche, milieu);
+            trifusion(tab, milieu+1, droite);
+            fusionner(tab, gauche, milieu, droite);
+        Fin Si
+    Fin
+    Fin Procedure

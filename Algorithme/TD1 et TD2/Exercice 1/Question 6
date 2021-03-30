@@ -1,0 +1,45 @@
+Q6)
+    Fonction enfiler(OBJET elem)
+
+    Variable
+    NOEUD : n
+
+    Debut
+    n.valeur <-- elem
+
+
+    Fonction defiler()
+    Variable
+    NOEUD : n;
+    Entier : n2;
+
+    Debut
+    Si NON fileVile() Alors
+        n2 <-- tete.valeur;
+        tete <-- Vide (null);
+    Fin Si
+    tete <-- tete.suivant;
+    Retourner n2
+    Fin
+    Fin Fonction
+
+Correction :
+
+    Procedure enfiler(OBJET elem)
+    Variable
+    NOEUD : n;
+
+    Debut
+    n.valeur <-- elem;
+    n.suivant <-- Vide (null);
+    Si fileVide() Alors
+        tete <-- n
+    Sinon
+        queue.suivant <-- n.valeur;
+    Fin Si
+    queue <-- n;
+    NbElem ++;
+    Fin
+    Fin Procedure
+
+

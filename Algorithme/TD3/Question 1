@@ -1,0 +1,35 @@
+Q1)
+    Procedure triSelection (tableau tab, ENTIER n)
+
+    Variable
+    ENTIER : i, nb <-- 0;
+
+    Debut
+    Pour un i allant de 0 à n - 1
+        Si nb < tab[i]
+            nb <-- tab[i]
+        Fin Si
+        i suivant
+    Fin Pour
+
+Correction
+
+    Procedure triSelection (tableau tab, ENTIER n)
+
+    Variable
+    ENTIER : i, j, imin, temp;
+
+    Debut
+        Pour i allant de 0 à n - 2
+            imin <-- i;
+            Pour j allant de i + 1 à n - 1
+                Si (tab[j] < tab[imin]) Alors
+                    imin <-- j;
+                Fin Si
+            Fin Pour
+            temp <-- tab[i];
+            tab[i] <-- tab[imin];
+            tab[imin] <-- temp;
+        Fin Pour
+    Fin
+    Fin Procedure

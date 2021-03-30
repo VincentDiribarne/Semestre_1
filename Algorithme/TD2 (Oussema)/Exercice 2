@@ -1,0 +1,18 @@
+Variable :
+Tableau d'entier tab[];
+Entier : n, x;
+
+Lire(n);
+Redim (tab[n]);
+Ecrire ("Quel nombre voulez vous trouvez ?")
+Lire (x)
+
+Pour i allant de 0 à tab[n]
+    Si (x = tab[i]) Alors
+        Ecrire ("Vrai a la position : " .i);   
+    Sinon
+        Ecrire ("Faux");
+    Fin Si
+Fin Pour
+
+Fin

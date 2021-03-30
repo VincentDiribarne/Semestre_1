@@ -1,0 +1,38 @@
+Q1)
+    Fonction booleen PileVide()
+    Variable
+
+    Debut
+        Si (sommet < 0) Alors
+            Retourner Vrai;
+        Sinon
+            Retourner Faux;
+        Fin SI
+    Fin
+    Fin Fonction
+
+    Fonction booleen PilePleine()
+    Variable
+
+    Debut
+        Si (sommet == (TAILLEMAX - 1)) Alors
+            Retourner Vrai;
+        Sinon
+            Retourner Faux;
+        Fin Si
+    Fin
+    Fin Fonction
+
+Correction
+
+    Fonction booleen pileVide()
+    Debut
+        Retourner (sommet == -1);
+    Fin
+    Fin Fonction
+
+    Fonction booleen pilePleine()
+    Debut
+        Retourner (sommet == TAILLEMAX - 1);
+    Fin
+    Fin Procedure

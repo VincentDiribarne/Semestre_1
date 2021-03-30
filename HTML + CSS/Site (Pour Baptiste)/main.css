@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(192, 223, 239);
+}
+
+.logo {
+    width: 10%;
+}
+
+.TitreduSite {
+    font-size: 3em;
+    font-family: 'Lucida Sans Unicode';
+    margin-left: 15%;
+}

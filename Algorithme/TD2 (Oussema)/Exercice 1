@@ -1,0 +1,15 @@
+Variable :
+Entier ligne, colonne, i;
+Tableau d'entier tab[];
+
+Debut
+Ecrire("Cb de lignes");
+Lire(ligne);
+Ecrire("Cb de colonne");
+Lire (colonne);
+
+Pour i allant de 0 à ligne - 1
+    Tableau d'entier tab(i)[colonne]
+Fin Pour
+
+Fuck Off

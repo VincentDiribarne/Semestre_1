@@ -1,0 +1,33 @@
+Debut
+
+Variables :
+Tab <-- [8, 45, 32, 6, 76, 24, 58];
+Entier x, i, temp, val;
+
+Lire (x);
+temp <-- tab[0];
+Pour i allant de 0 à Len(Tab) - 1
+    val <-- (x - tab[i]);
+    Si (val > 0) Alors
+        val <-- val;
+    Sinon 
+        val <-- - val;
+    Fin Si
+    Si (temp > val)
+        temp <-- val;
+    Fin Si
+Fin Pour
+
+Ecrire (temp);
+Fin
+
+Complexité : 
+
+Lire --> 1
+Operation --> 1
+Pour --> 5n
+Si, Sinon --> 1n + 1n
+Si --> 1n
+Operation --> 1
+
+T(A) = 1 + 1 + 5n + 2n + 1n + 1 = O(n) 

@@ -1,0 +1,381 @@
+Pseudo Code (en algo)
+
+	Variable
+	Entier sw; 
+	Reel prix, moy;
+	
+	Debut
+	Tant que (sw != 0)
+		menu();
+		Lire (sw)
+	 		Choix sw
+				Cas 1 : 
+					addVoit ();
+			
+				Cas 2 :
+					prix <-- prixVoit ();
+					Ecrire ("Le prix est de : " .prix);
+			
+				Cas 3 : 
+					moy = prixMoy ();
+					Si (moy != 0)
+						Ecrire ("La moyenne est de :" .moy); 
+					Sinon
+						Ecrire (Aucune correspondance);
+					Fin Si	
+				Cas 4 : 
+					prixMinprixMax ();
+					Ecrire (" ");
+				Cas 5 :
+					affVoit ();	
+				Cas 6 :
+					modifPrix ();
+				Cas 7 :
+					suppVoit ();
+					Ecrire("Votre vehicule a bien été supprimé;
+				Cas 0 :
+            		Ecrire ("Votre programme s'arrete");
+        		Autre :
+        			Ecrire ("Veuillez ecrire un chiffre compris entre 0 et 7");
+            
+			Fin Choix
+	Fin Tant que
+	Fin
+	
+
+	Procedure menu()
+
+	Debut
+	Ecrire(" ");
+	Ecrire("1 : Ajouter une voiture dans un fichier");
+	Ecrire("2 : Afficher le prix d'une voiture");
+	Ecrire("3 : Afficher le prix d'un modèle");
+	Ecrire("4 : Affiche les voitures dont le prix est compris entre deux valeurs PrixMax et PrixMin");
+	Ecrire("5 : Afficher toutes les voitures");
+	Ecrire("6 : Modifier le prix d'une voiture");
+	Ecrire("7 : Supprimer une voiture");
+	Ecrire("0 : Quitter le programme");
+	Ecrire("Votre reponse SVP :");
+	
+	Fin
+	Fin procedure
+	
+	Procedure addVoit ();
+	Debut
+	
+	1 <-- Ouvrir ("Voiture.txt, Ajout);
+	
+	Chaine r <-- question("Constructeur", 30);
+	Int e <-- compteEspace(30, Len(r));
+	ecrireFichier(r, 1);
+	Pour i allant de 0 à e
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r2 <-- question("Modele", 20);
+	Entier e2 <-- compteEspace(20, Len(r2));
+	ecrireFichier(r2, 1);
+	Pour i allant de 0 à e2
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r3 <-- question("Type", 10);
+	Entier e3 <-- compteEspace(10, Len(r3));
+	ecrireFichier(r3, 1);
+	Pour i allant de 0 à e3
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r4 <-- question("Immatriculation", 12);
+	Entier e4 <-- compteEspace(12, Len(r4));
+	ecrireFichier(r4, 1);
+	Pour i allant de 0 à e4
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r5 <-- question("Année", 4);
+	Entier e5 <-- compteEspace(4, Len(r5));
+	ecrireFichier(r5, 1);
+	Pour i allant de 0 à e5
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r6 <-- question("Prix", 10);
+	Entier e6 <-- compteEspace(10, Len(r6));
+	ecrireFichier(r6, 1);
+	Pour i allant de 0 à e6
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Chaine r7 <-- question("Carburant", 10);
+	Entier e7 <-- compteEspace(10, Len(r7));
+	ecrireFichier(r7, 1);
+	Pour i allant de 0 à e7
+		ecrireFichier(" ", 1);
+		i suivant;
+	Fin Pour
+	
+	Fermer(1);
+	Fin
+	Fin Procedure
+	
+	
+	Fonction Chaine question(Chaine q, Entier max)
+	Variable
+	Booleen ok <-- faux;
+	
+	Debut
+	Tant que (ok = faux)
+	    Ecrire(q. " : ");
+	    Lire(reponse);
+	    c <-- Len(reponse)
+	    Si (c > max)
+	        Ecrire(Trop de caractere);
+	        continue;
+	    Fin Si
+	Fin Tant que
+	ok <-- vrai;
+	retourner reponse;
+	Fin
+	Fin fonction
+	
+	
+	Fonction Entier compteEspace (int max, int b)
+	Debut
+	retourner max - b;
+	Fin
+	Fin Fonction
+	
+	Fonction Entier remplacement (Chaine reponse)
+	Debut
+	reponse <-- remplacer (reponse, " ", "");
+	Entier converti <-- enEntier(ligne);
+	Retourner converti;
+	
+	Fin
+	Fin Fonction
+	
+	
+	Fonction Reel PrixVoit()
+	Variable
+	Chaine prix;
+	Reel prix2 <-- 0, min <-- 0;
+	
+	Debut
+	2 <-- Ouvrir ("Voiture.txt, lecture);
+	
+	Chaine r <-- question("Modele", 20);
+	Chaine r2 <-- question("Annee", 4);
+	
+	Tant que (Non eof(2))
+		Chaine val <-- LireFichier(2);
+		Si(((Trouve(val, r)) && ((Trouve(val, r2)))
+			prix <-- Mid(val, 81, 10);	  
+			prix2 <-- remplacement(prix);
+			Si (min = 0)
+				min <-- prix2
+			Fin Si
+			Si (min > prix2)
+				min <-- prix2;
+			Fin Si
+		Fin Si
+	Fin Tant que	
+		
+	Si (min = 0)
+	Ecrire("Le Fichier n'a trouvé aucune correpondance);
+	Fin Si
+	
+	Fermer (2);
+	Retourner min;
+			
+	Fin
+	Fin Fonction	
+	
+	
+	Fonction Reel PrixMoy()
+	Variable
+	Chaine prix;
+	Reel prix2, prixMax, moy, n = 1;
+	
+	Debut
+	3 <-- Ouvrir ("Voiture.txt, lecture);
+	Chaine r <-- question("Modele", 20);
+	
+	Tant que (Non eof(3))
+		Chaine val <-- LireFichier(3);
+		Si(Trouve(val,r)
+			prix <-- Mid(val, 81, 10);	  
+			prix2 <-- remplacement(prix);
+			prixMax <-- prixMax + prix2;
+			n <-- n + 1;		
+		FinSi
+	Fin Tant que
+	Fermer(3);
+	moyenne <-- prixMax / n;
+	
+	
+	Retourner moy;
+	Fin
+	Fin Fonction
+	
+	
+	Procedure prixMinprixMax()
+	Variable
+	Chaine reponse, modele;
+	
+	Debut 
+	4 <-- Ouvrir ("Voiture.txt, lecture);
+	Chaine r <-- question("Valeur Minimale", 10);
+	int min <-- remplacement(r);
+	
+	Chaine r2 <-- question("Valeur Maximale", 10);
+	int max <-- remplacement(r2);
+	
+	Si(min > max)
+		int temp <-- min;
+		min <-- max;
+		max <-- temp;
+	Fin Si
+	
+	Tant que (Non eof(4))
+		Chaine val <-- LireFichier(4);
+		reponse <-- Mid(val, 81, 10);
+		int converti3 <-- remplacement(reponse);
+		Si ((min <= converti3) && (max > converti3))
+			modele <-- Mid(val, 31, 51);
+			modele <-- remplacer (modele, " ", "");
+			Ecrire (modele);
+		Fin Si
+	Fin Tant que
+	Fermer(4);
+	
+	Fin
+	Fin Procedure
+	
+	
+	Procedure AffPrix()
+	Variable
+	Chaine <-- Modele;
+	
+	Debut
+	5 <-- Ouvrir ("Voiture.txt, lecture);
+	Ecrire("Voici voiture : ");
+	Tant que (Non eof(5))
+		modele <-- LireFichier(5);
+		Ecrire (modele);
+	Fin Tant que
+	Fermer (5);
+	
+	Fin
+	Fin procedure
+	
+	
+	Fonction Entier nombreTableau()
+	Variable
+	Entier n = 0;
+	Chaine line;
+	
+	Debut
+	6 <-- Ouvrir ("Voiture.txt, lecture);
+	Tant que (Non eof(5))
+		line <-- LireFichier(5);
+		n <-- n + 1;
+	Fin Tant que
+	Fermer (6);
+	
+	Retourner n;
+	Fin
+	Fin Fonction
+	
+	Procedure ModifPrix();
+	Variable
+	Chaine tab[i], espace = "";
+	Entier numLine = 0;
+	
+	Debut
+	int n <-- nombreTableau();
+	Redim (tab[n]);
+	7 <-- Ouvrir ("Voiture.txt, lecture);
+	Chaine r <-- question("Immatriculation", 12);
+	Tant que (Non eof(7))
+		Chaine val <-- LireFichier(7);
+		numLine <-- numLine + 1;
+		Si ((Mid(val, 62, 74)) = r);
+			Entier lignePlaque <-- numLine;
+		Fin Si
+	Fin Tant que
+	Fermer (7);
+	
+	Si (numLine = 0)
+		Ecrire("Plaque Inexistante");
+	Fin Si
+	
+	8 <-- Ouvrir ("Voiture.txt, ajout);
+	Chaine r2 <-- question("Nouveau Prix", 10);
+	Entier e <-- compteEspace(10, Len(r2));
+	Pour j allant de 0 à e
+		espace = espace + " ";
+		j suivant; 
+	Fin Pour
+	
+	tab[lignePlaque - 1] <-- remplace(tab[lignePlaque - 1], Mid(tab[lignePlaque - 1], 81, 10), r2 + espace);
+	Pour un o allant de 0 à Len(tab[])
+		ecrireLigne(tab[o], 8);
+		o suivant;
+	Fin Pour
+	Fermer (8);
+	Ecrire("Le prix a bien été modifié");
+	
+	Fin
+	Fin Procedure
+	
+	
+	Procedure suppVoit()
+	Variable 
+	Chaine tab[], tab2[];
+	Entier i = 0;
+	
+	Debut
+	int n <-- nombreTableau();
+	Redim (tab[n]);
+	
+	9 <-- Ouvrir ("Voiture.txt, lecture);
+	Chaine r <-- question("Immatriculation", 12);
+	Tant que (Non eof(9))
+		Chaine val <-- LireFichier(9);
+		tab[i] <-- val;
+		i <-- i + 1;
+	Fin Tant que
+	Fermer (9);
+	
+	Redim(tab2[i-1]);
+	i = 0;
+	Pour un u allan de 0 à Len(tab)
+		Si (Mid (tab[u], 62, 12) != r)
+			tab2[i] <-- tab[u];
+			i suivant;
+			u suivant;
+		Fin Si
+	Fin Pour
+	
+	10 <-- Ouvrir ("Voiture.txt, ajout);
+	Pour un o allant de 0 à Len(tab2)
+		ecrireLigne(tab[o]);
+	Fin Pour
+	Fermer (10);
+	
+	Fin
+	Fin Procedure
+		
+	
+	
+	
+	
+	
+			

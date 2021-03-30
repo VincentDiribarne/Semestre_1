@@ -1,0 +1,41 @@
+Q4)
+    Fonction PILE tri()
+    Variable
+    Pile : PileA, PileB, PileC;
+    Entier : a, b, c;
+    Debut
+        Tant que NON pileA.pileVide
+                Si (pileB.pileVide OU (pileA.sommet() < pileB.sommet) Alors
+                    a <-- pileA.depiler();
+                    pileB.empiler(a);
+                    Tant que NON pileC.pileVide
+                        c <-- pileC.depiler();
+                        pileB.empiler(c);
+                    Fin Tant que
+                Sinon
+                    b <-- pileB.depiler();
+                    pileC.empiler(b);
+                Fin Si
+        Fin Tant Que
+    Fin
+    Fin Fonction
+
+Correction :
+
+    Fonction PILE tri()
+    Variable
+    Pile : PileA, PileB, PileC;
+
+    Debut
+        Tant que NON pileA.pileVide
+                Si (pileB.pileVide OU (pileA.sommet() < pileB.sommet) Alors
+                    pileB.empiler(pileA.depiler());
+                    Tant que NON pileC.pileVide
+                        pileB.empiler(pileC.depiler());
+                    Fin Tant que
+                Sinon
+                    pileC.empiler(pileB.depiler());
+                Fin Si
+        Fin Tant Que
+    Fin
+    Fin Procedure

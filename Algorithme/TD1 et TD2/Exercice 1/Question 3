@@ -1,0 +1,51 @@
+Q3)
+    Procedure empiler (OBJET elem)
+    Debut
+        Si pilePleine() Alors
+            Signaler une erreur (la Pile est Pleine);
+        Sinon
+            sommet <-- sommet + 1;
+            tabPile[sommet] <-- elem;
+        Fin Si
+    Fin
+    Fin Procedure
+
+    Fonction OBJET depiler()
+    Variable
+    Debut
+        Si pileVide()
+            Signaler une erreur (La pile est Vide)
+        Sinon
+            tabPile[TAILLEMAX] <-- null;
+            sommet <-- sommet - 1;
+            Retourner tabPile[sommet];
+        Fin SI
+    Fin
+    Fin Fonction
+
+    Correction
+
+    Procedure empiler (OBJET elem)
+        Debut
+            Si pilePleine() Alors
+                Signaler une erreur (la Pile est Pleine);
+            Sinon
+                sommet <-- sommet + 1;
+                tabPile[sommet] <-- elem;
+            Fin Si
+        Fin
+        Fin Procedure
+
+        Fonction OBJET depiler()
+        Variable
+        OBJET temp
+        Debut
+            Si pileVide()
+                Signaler une erreur (La pile est Vide);
+            Sinon
+                elem <-- tabPile[sommet];
+                sommet <-- sommet - 1;
+                Retourner elem;
+            Fin SI
+        Fin
+        Fin Fonction

@@ -1,0 +1,39 @@
+Q2)
+    Fonction Entier longueur()
+    Variable
+
+    Debut
+    Retourner (sommet +1);
+    Fin
+    Fin Fonction
+
+    Fonction OBJET sommet ()
+
+    Debut
+        Si pileVide() Alors
+            Retourner Null;
+        Sinon
+            Retourner tabPile[sommet];
+        Fin Si
+    Fin
+    Fin Fonction
+
+Correction
+
+    Fonction Entier longueur()
+        Variable
+
+        Debut
+        Retourner (sommet +1);
+        Fin
+        Fin Fonction
+
+    Fonction OBJET sommet()
+
+    Debut
+    Si NON(pileVide())
+        Retourner (tabPile[sommet]);
+    Sinon
+        Signaler une erreur (la pile est Vide);
+    Fin Si
+    Fin
